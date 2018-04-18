@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            background-color:rgb(194, 194, 194) ;
+        }
+        .shape {
+            width: 150px;
+            height: 150px;
+            background-color: rgb(255, 0, 0);
+           margin-top: 50px;
+            position: absolute;
+}
+        #btn{
+            margin-top:300px;
+           
+        }
+        .btn{
+            width: 100px;
+            padding: 5px;
+           color:rgb(93, 128, 0);
+            border-radius: 5px;
+            border: 1px solid rgb(0, 0, 0);
+            margin-bottom: 100px;
+        }
+        main{
+            position: relative;
+            border: 1px solid rgb(0, 0, 0);
+            width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+<main>
+   <div class="shape"></div>
+    <button type="button" id="btn" class="btn">Start Anime</button>
+    <button type="button" id="btn1" class="btn">stop</button>
+    <button type="button" id="btn2" class="btn">stop(true)</button>
+    <button type="button" id="btn3" class="btn">stop(true,true)</button>
+    <button type="button" id="btn4" class="btn">finish()</button>
+    <button type="button" id="btn5" class="btn">clearQueue()</button> 
+</main>
+
+    
+    <script type="text/javascript" src="Js/Jquery.js"></script>
+    <script>
+        $(document).ready(function() {
+            var div=$(".shape");
+            
+               /* main code*/
+            $("#btn").click(function() {
+                div.animate({left:"250px"},2000); 
+                div.animate({width:"200px"},2000);
+                div.animate({height:"200px"},2000);
+                div.animate({width:"100px"},2000);
+                div.animate({height:"100px"},2000);
+                
+                });
+           /* when click stop button*/
+            
+            $("#btn1").click(function() {
+              div.stop();  
+            });
+            
+             /* when click stop(true) button*/
+            
+            $("#btn2").click(function() {
+              div.stop(true);  
+            });
+             /* when click stop(true,true) button*/
+            
+            $("#btn3").click(function() {
+              div.stop(true,true);  
+            });
+            /* when click finsh button*/
+            
+            $("#btn4").click(function() {
+              div.finish();  
+            });
+            /* when click clearQueue button*/
+            
+            $("#btn5").click(function() {
+              div.clearQueue();  
+            });
+            
+            });
+      
+
+    </script>
+</body>
+
+</html>
