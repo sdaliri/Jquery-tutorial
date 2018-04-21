@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>event handler</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+            font-family: 'saeid';
+            font-size: 1.03em;
+        }
+
+        @font-face {
+            font-family: 'saeid';
+            src: url('./Font/Dast_Nevis.woff') format('trueType');
+        }
+
+        main {
+
+            border: 1px solid #000;
+            width: 800px;
+            height: 680px;
+            margin: 0 auto;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .div {
+            position: relative;
+            display: inline-block;
+            width: 250px;
+            height: 150px;
+            border: 1px solid rgb(144, 173, 179);
+            border-radius: 4px;
+            background-color: rgb(0, 131, 203);
+
+        }
+
+        .div:nth-child(1),
+        .div:nth-child(2),
+        .div:nth-child(3) {
+            margin-top: 15px;
+
+        }
+
+        .div p {
+            width: 200px;
+            right: 15px;
+
+            position: absolute;
+
+        }
+
+        .div span {
+            color: white;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .div input {
+           margin-top: 5px;
+            position: absolute;
+            right: 0px;
+            border: 1px solid #000;
+            border-radius: 4px;
+
+        }
+
+       
+
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="div" id="div1">
+            <p>اگه روی من <span>کلیک</span> کنی رنگم عوض میشه</p>
+        </div>
+        <div class="div" id="div2">
+            <p>اگه روی من دابل <span>دابل کلیک</span> کنی رنگم عوض میشه</p>
+        </div>
+        <div class="div" id="div3">
+            <p>اگه <span>نشانه گر موس</span> روی من <span>بیاد</span> رنگم عوض میشه</p>
+        </div>
+        <div class="div" id="div4">
+            <p>اگه <span>نشانه گر موس</span> از روی من <span>بره</span> رنگم عوض میشه</p>
+        </div>
+        <div class="div" id="div5">
+            <p>ترکیبی از <span>ورود و خروج </span><span>نشانه گر موس</span> </p>
+        </div>
+        <div class="div" id="div6">
+            <p>اگه هر کردوم از <span>دکمه های موس</span> رو <span>فشار بدی</span> رنگ من عوض میشه</p>
+        </div>
+        <div class="div" id="div7">
+            <p>اگه هر کدوم از<span> دکمه های موس</span> رو <span>فشار بدی</span> بعد <span>رها کنی</span> رنگ من عوض میشه</p>
+        </div>
+        <div class="div" id="div8">
+            <p>اگه <span>نشانه گر موس</span> رو در داخل من <span> حرکت بدی</span> مختصات نشانه گر رو بهت نشون میدم<br><span id="show-position"></span></p>
+        </div>
+        <div class="div" id="div9">
+            <p>من بهت
+                <span> تعداد تغییر اندازه پنجره ی مرورگر</span> رو نشون میدم <br><br> <span id="show-resize">تغییر کرده:</span></p>
+        </div>
+        <div class="div" id="div10">
+            <input type="text" value="کلیک کنی تغییر میکنم">
+
+        </div>
+        <div class="div" id="div11">
+            <input type="text" value="رو من کلیک کن">
+           
+        </div>
+        <div class="div" id="div12">
+            <p>این اخری هم متد <span>on()</span> هست که یعنی برای <span>یک المان</span> میتونی <span>چندین رویداد</span> تعریف کنی</p>
+        </div>
+    </main>
+    <script src="Js/Jquery.js"></script>
+    <script>
+        $(document).ready(function() {
+            var x = 0;
+            $("#div1").click(function() {
+                $(this).css({
+                    "background-color": "red"
+                });
+
+            });
+            $("#div2").dblclick(function() {
+                $(this).css({
+                    "background-color": "red"
+                });
+
+            });
+            $("#div3").mouseenter(function() {
+                $(this).css({
+                    "background-color": "red"
+                });
+
+            });
+            $("#div4").mouseleave(function() {
+                $(this).css({
+                    "background-color": "red"
+                });
+
+            });
+
+            $("#div5").hover(function() {
+                $(this).css({
+                    "background-color": "red"
+                });
+            }, function() {
+                $(this).css({
+                    "background-color": "gold"
+                });
+
+            });
+            $("#div6").mousedown(function() {
+                $(this).css({
+                    "background-color": "red"
+                });
+
+            });
+            $("#div7").mouseup(function() {
+                $(this).css({
+                    "background-color": "red"
+                });
+
+            });
+            $("#div8").mousemove(function(event) {
+                $("#show-position").text(" افقی:" + event.pageX + "," + " عمودی:" + event.pageY);
+
+            });
+            $(window).resize(function() {
+                $("#show-resize").text(x += 1);
+
+            });
+            $("#div10 input").focus(function(){
+            
+               $(this).css({"width":"200px","height":"50px","border":"2px solid red","color":"green","border-radius":"4px"})
+            });
+            $("#div11 input").focus(function() {
+                $(this).css({"width":"200px","height":"50px","border":"2px solid green","color":"green","border-radius":"4px"}).attr({value:"مرسی رو من کلیک کردی"});
+
+            });
+            $("#div11 input").blur(function(){
+               $(this).attr({value:"ای خدا چرا رفتی"}).css({"color":"red","border":"2px solid red"}); 
+            });
+
+ $("#div12").on({click:function(){
+     alert(" اگر روم کلیک کنی پیغام راهنما رو میبینی\n اگه با نشان گر موس بیای  رنگم عوض میشه\n اگه نشان گر موس خارج بشه بازم رنگم تغییر میکنه");
+     
+ },mouseenter:function(){
+     $(this).css({"background-color":"red"});
+ }, 
+                 mouseleave:function(){
+                       $(this).css({"background-color":"gold"});
+                 },
+                
+                
+                });
+
+        });
+
+    </script>
+</body>
+
+</html>
