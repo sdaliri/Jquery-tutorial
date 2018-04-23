@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get Method()</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            direction: rtl
+        }
+      
+       legend  p{
+            padding: 5px;
+        }
+
+        fieldset {
+            height: 450px;
+            width: 400px;
+            border-radius: 4px;
+            float: right;
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+            text-align: center;
+        }
+
+        main {
+            border: 1px solid #000;
+        }
+
+   
+
+        .btn {
+            border: 1px solid #000;
+            border-radius: 4px;
+            height: 30px;
+            background-color: seagreen;
+            color: white;
+            margin-top: 5px;
+        }
+        #btn3 span{
+            text-decoration: underline;
+            color: #000;
+        }
+        #btn4{
+            display: block;
+            
+            width:205px;
+        }
+        #txt-1{
+            height: 25px;
+            border-radius: 4px;
+            border: 1px solid #000;
+            width: 200px;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <fieldset class="copy">
+            <legend>Attr() method</legend>
+
+            <img id="sherlock" src="./images/sherlock.png" alt="sherlock" width="400px" height="400">
+            <button type="button"  class="btn" id="btn1">click  me for return width attribute</button>
+
+        </fieldset>
+
+        <fieldset class="paste">
+            <legend>Text()</legend>
+            <p class="first"><b>حدود سه سال است که منتظر بازگشت شرلوک هولمز و جان واتسون بر سر ادامه‌ی ماجراهای بعد از کشته شدن «ناپلونِ تهدیدها» توسط شرلوک هستیم. اخبار و مصاحبه‌ها و تریلرها از فصل چهارم «شرلوک» همه‌ روی یک موضوع تمرکز داشتند؛ که این فصل به احتمال فراوان فصل نهایی این سریال است و؛ فصلی که در آن همه‌چیز وارد مرحله‌ی خطرناک‌تر و مرگبارتری برای شرلوک و دستیارش می‌شود؛ فصلی که در آن بازی، واقعی می‌شود. خب، اپیزود اول این سه قسمت جدید که «شش تاچر» نام دارد،   «شش تاچر» در حالی به پایان می‌رسد که.....</b> </p>
+              <button type="button" class="btn" id="btn2">click  me for return content in bottom paragraph</button> 
+              <p class="second"></p>
+            
+        </fieldset>
+        
+        <fieldset>
+            <legend>HTML()</legend>
+            <p class="one"><b>حدود سه سال است که منتظر بازگشت شرلوک هولمز و جان واتسون بر سر ادامه‌ی ماجراهای بعد از کشته شدن «ناپلونِ تهدیدها» توسط شرلوک هستیم. اخبار و مصاحبه‌ها و تریلرها از فصل چهارم «شرلوک» همه‌ روی یک موضوع تمرکز داشتند؛ که این فصل به احتمال فراوان فصل نهایی این سریال است و؛ فصلی که در آن همه‌چیز وارد مرحله‌ی خطرناک‌تر و مرگبارتری برای شرلوک و دستیارش می‌شود؛ فصلی که در آن بازی، واقعی می‌شود. خب، اپیزود اول این سه قسمت جدید که «شش تاچر» نام دارد،   «شش تاچر» در حالی به پایان می‌رسد که.....</b> </p>
+              <button type="button" class="btn" id="btn3">click  me for return content <span> WITH HTML TAG </span>in bottom paragraph</button> 
+              <p class="two"></p>
+        </fieldset>
+        <fieldset>
+            <legend>Val()</legend>
+            <input id="txt-1" type="text" value="SHERLOCK"><label for="txt-1"></label> <button type="button" class="btn" id="btn4">Click Away</button>
+            
+        </fieldset>
+
+    </main>
+
+    <script src="Js/Jquery.js"></script>
+    <script>
+        $("#btn1").click(function() {
+            alert("The sherlock picture's width is :" + $("#sherlock").attr("width"));
+        });
+$("#btn2").click(function() {
+    var x = $(".paste .first").text();
+$(".paste .second").text(x);
+   
+});
+        $("#btn3").click(function() {
+  var x=$(".one").html();
+$(".two").html(x);
+           
+});
+        
+         $("#btn4").click(function() {
+  var x=$("#txt-1").val();
+$("#txt-1+label").text(x).fadeTo(2000,0);
+           
+});
+    </script>
+</body>
+
+</html>
