@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Set Method()</title>
+    <style>
+        html,
+        body {
+            direction: rtl;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        main {
+            
+            width: 850px;
+            margin: 0 auto;
+
+        }
+
+        fieldset {
+            width: 400px;
+            float: right;
+            margin-right: 10px;
+            padding: 0;
+            height: 400px;
+
+        }
+
+        .one span {
+            color: red
+        }
+
+        .span-html {
+            border: 1px solid #000;
+            color: blue !important;
+            border-radius: 4px;
+        }
+
+        .three {
+            width: 200px;
+            border-radius: 4px;
+            border: 1px solid #000;
+            height: 20px;
+        }
+
+        .btn {
+            width: 100px;
+            border: 1px solid #000;
+            height: 30px;
+            border-radius: 4px;
+            background-color: green;
+            color: white;
+            margin-right: 25px;
+
+        }
+        #btn-4{
+            margin-right: 140px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <fieldset>
+            <legend>HTML()/Text()/Val()</legend>
+            <span>HTML:</span>
+            <p class="one">این پاراگراف قدیمی است اگر روی دکمه HTML کلیک کنی <span>محتوای </span> این پاراگراف تغییر میکند.</p>
+            <hr>
+            <span>Text:</span>
+            <p class="two">این پاراگراف قدیمی است اگر روی دکمه Text کلیک کنی <span> محتوای</span> این پاراگراف تغییر میکند.</p>
+            <hr>
+            <span>Val:</span> <br><input class="three" type="text" value="محتوای قدیمی">
+            <hr>
+
+            <button type="button" id="btn-1" class="btn">Set HTML</button>
+            <button type="button" id="btn-2" class="btn">Set Text</button>
+            <button type="button" id="btn-3" class="btn">Set Val</button>
+        </fieldset>
+        <fieldset>
+            <legend>Attr()</legend>
+            <img class="img" src="images/sherlock.png" alt="sherlock" width="400px"><br>
+            <button type="button" id="btn-4" class="btn">Set Attr</button>
+        </fieldset>
+    </main>
+    <script src="Js/Jquery.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#btn-1").click(function() {
+                $(".one").html("<span class='span-html'>این یک محتوای جدید است</span>");
+            });
+            $("#btn-2").click(function() {
+                $(".two").text("این یک محتوای جدید است");
+            });
+
+            $("#btn-3").click(function() {
+                $(".three").val("این یک محتوای جدید است");
+            });
+
+            $("#btn-4").click(function() {
+                $(".img").attr("width", "200px");
+            });
+        });
+    </script>
+</body>
+
+</html>
