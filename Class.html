@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+            background-color: beige;
+
+        }
+
+        @font-face {
+            font-family: 'saeid';
+            src: url('./Font/Nas.ttf') format('TrueType');
+        }
+
+        main {
+            width: 800px;
+            border: 1px solid #000;
+            border-radius: 4px;
+            margin: 0 auto;
+
+        }
+
+        fieldset {
+            position: relative;
+            height: 100px;
+            display: inline-block;
+            width: 330px;
+            border-radius: 4px;
+        }
+
+        .btn {
+            border-radius: 4px;
+            border: 1px solid white;
+            background-color: green;
+            color: white;
+            height: 30px;
+            position: relative;
+            top: -50px;
+        }
+
+        fieldset p {
+            display: inline-block;
+            position: absolute;
+        }
+
+        .beautifull {
+            font-family: 'saeid';
+            font-size: 1.04em;
+        }
+
+        .add-class-two p {
+            margin-right: 40px;
+            margin-top: 0;
+        }
+        .remove-class-one p{
+              margin-right: 40px;
+            margin-top: 0;
+        }
+        .remove-class-one+button{
+            height: 40px;
+            width: 70px;
+        }
+        .toggle-class button{
+           margin-top: 150px;
+            margin-right: 350px;
+        }
+        .toggle-class p{
+            padding: 0;
+            margin-top: 0;
+            margin-right: 250px;
+        }
+        .toggle-class fieldset{
+            width: 770px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="add-class">
+            <fieldset class="add-class-one">
+                <legend>بدون کلاس</legend>
+                <p>سیاهی دو چشمانت مرا کشت درازی دو زلفانت مرا کشت به قتلم حاجت تیر و کمان نیست خم ابرو و مژگانت مرا کشت </p>
+            </fieldset>
+            <button class="btn" id="btn-1" type="button">AddClass</button>
+            <fieldset class="add-class-two">
+                <legend>با کلاس</legend>
+            </fieldset>
+        </div>
+        <hr>
+        <div class="remove-class">
+             <fieldset class="remove-class-one">
+                <legend>با کلاس</legend>
+                <p class="beautifull">دلم دور است و احوالش ندونم  &nbsp; &nbsp;کسی خواهد که پیغامش رسونم<br>   خداوندا ز مرگم مهلتی ده  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; که دیداری بدیدارش رسونم</p>
+            </fieldset>
+            <button class="btn" id="btn-2" type="button">Remove<br>Class</button>
+            <fieldset class="remove-class-two">
+                <legend>بدون کلاس</legend>
+            </fieldset>
+        </div>
+        <hr>
+        <div class="toggle-class">
+            <fieldset>
+                <legend>ToggleClass</legend>
+                <p>نمیدانم که سرگردان چرایم  &nbsp; &nbsp;گهی نالان گهی گریان چرایم<br>  همه دردی بدوران یافت درمان &nbsp; &nbsp; ندانم مو که بیدرمان چرایم</p>
+                <button class="btn" id="btn-3" type="button">ToggleClass</button>
+            </fieldset>
+        </div>
+        <p>تمام دوبیتی های یاد شده از باباطاهر می باشد</p>
+    </main>
+    <script src="Js/Jquery.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $("#btn-1").click(function() {
+                $(".add-class-two").append("<p>سیاهی دو چشمانت مرا کشت&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp درازی دو زلفانت مرا کشت   <br>به قتلم حاجت تیر و کمان نیست &nbsp&nbsp&nbsp&nbspخم ابرو و مژگانت مرا کشت&nbsp&nbsp&nbsp&nbsp</p>");
+                $(".add-class-two p").addClass("beautifull");
+
+            });
+            $("#btn-2").click(function() {
+                $(".remove-class-two").append("<p>دلم دور است و احوالش ندونم  &nbsp; &nbsp;کسی خواهد که پیغامش رسونم<br>   خداوندا ز مرگم مهلتی ده  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; که دیداری بدیدارش رسونم</p>");
+                $(".remove-class-two p").removeClass("beautifull");
+
+            });
+
+ $("#btn-3").click(function() {
+     $(".toggle-class p").toggleClass("beautifull");
+     
+ });
+        });
+    </script>
+</body>
+
+</html>
