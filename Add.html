@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add Methods</title>
+    <style>
+        body,
+        html {
+            padding: 0;
+            margin: 0;
+
+        }
+
+        main {
+            text-align: center;
+            height: 400px;
+            width: 500px;
+            margin: 50px auto;
+
+        }
+
+        .now {
+            margin-top: 30px;
+            width: 100px;
+            height: 300px;
+            display: inline-block;
+        }
+
+        .box {
+            border-radius: 4px;
+            text-align: center;
+            height: 400px;
+            border: 1px solid #000;
+            width: 500px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .span {
+            position: relative;
+            top: 20px;
+            right: 75px;
+        }
+
+        .btn {
+            width: 220px;
+            height: 30px;
+            background-color: green;
+            border: 1px solid white;
+            border-radius: 4px;
+            color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="box">
+            <img class="now" src="images/now.jpg" alt="sherlock " width="100">
+            <span class="span">now</span>
+
+        </div>
+        <button id="btn-2" class="btn" type="button">prepend</button>
+        <button id="btn-1" class="btn" type="button">Append</button>
+        
+    </main>
+    <script src="Js/Jquery.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#btn-1").click(function() {
+                $(".box").append("<img class='now' src='images/append.jpg' alt='sherlock' ><span class='span'>Append</span> ");
+
+            });
+            $("#btn-2").click(function() {
+                $(".box").prepend("<img class='now' src='images/prepend.jpg' alt='sherlock'><span class='span'>Prepend</span>");
+
+            });
+        });
+
+    </script>
+</body>
+
+</html>

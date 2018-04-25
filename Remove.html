@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            direction: rtl
+        }
+
+        main {
+            border-radius: 4px;
+            margin: 50px;
+            border: 1px solid #000;
+            width: 250px;
+            height: 200px;
+        }
+
+        .btn {
+            border-radius: 4px;
+            border: 1px solid white;
+            color: white;
+            background-color: green;
+            height: 30px;
+            width: 100px;
+        }
+
+        #btn-1 {
+            margin-right: 20px;
+        }
+
+        .p-body {
+            border: 1px solid #000;
+
+            margin-right: 50px;
+            width: 300px;
+            border-radius: 4px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <p>این تگ والد است </p>
+
+        <ul>
+            <li>این فرزند اول است</li>
+            <li>این فرزند دوم است</li>
+            <li>این فرزند سوم است</li>
+        </ul>
+
+        <button class="btn" id="btn-1" type="button">Remove</button>
+        <button class="btn" id="btn-2" type="button">Empty</button>
+
+
+    </main>
+
+    <script src="Js/Jquery.js">
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#btn-1").click(function() {
+                $("main").remove();
+                $("body").html("<p class='p-body'>متد Remove  خود selector و تمام فرزند های ان و تمام محتوا و data و event  های مرتبط با آن را پاک میکند</p>");
+            });
+            $("#btn-2").click(function() {
+                $("main").empty();
+                $("main").html("<p>متد empty به غیر از خود selector تمام محتوا و فرزندان مرتبط با آن را پاک میکند.</p>");
+            });
+        });
+    </script>
+</body>
+
+</html>
