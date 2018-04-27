@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sibling</title>
+    <style>
+     body,
+        html {
+           
+            padding: 0;
+            margin: 0;
+            background-color:beige ;
+        }
+        main{
+         
+            width: 900px;
+             margin: 100px auto;
+            text-align: center;
+        }
+        .main{
+            border-radius: 4px;
+            width: 900px;
+            border: 1px solid #000;
+            height: 300px;
+        }
+        .main div{
+            border-radius: 4px;
+            margin-top: 50px;
+            display: inline-block;
+            height: 200px;
+            width: 100px;
+            border: 1px solid #000;
+        }
+            .btn{
+            
+            width: 100px;
+            border: 1px solid white;
+            border-radius: 4px;
+            height: 30px;
+            background-color: green;
+            color: white;
+        }
+        .child-3{
+            position: relative;
+            top: 20px;
+            border: 3px solid green !important;
+        }
+        
+    </style>
+</head>
+<body>
+   <main>
+       
+       <div class="main">
+           <div class="child-1">First-Child</div>
+           <div class="child-2">First-Child</div>
+           <div class="child-3">Second-Child (Selector)</div>
+           <div class="child-4">Third-Child</div>
+           <div class="child-5">Fourth-Child</div>
+           <div class="child-6">Fourth-Child</div>
+       </div>
+       <button type="button" class="btn" id="btn-1">Next</button>
+       <button type="button" class="btn" id="btn-2">PrevAll</button>
+       <button type="button" class="btn" id="btn-3">NextUntil</button>
+       <button type="button" class="btn" id="btn-4">Sibling</button>
+   </main>
+    <script src="Js/Jquery.js"></script>
+    <script>
+    $(document).ready(function() {
+        $("#btn-1").click(function(){
+            $(".child-3").next().css({"backgroundColor":"gold"});
+           $("#btn-2").add("#btn-3").add("#btn-4").attr("disabled","disabled"); 
+        });
+        
+            $("#btn-2").click(function(){
+            $(".child-3").prevAll().css({"backgroundColor":"gold"});
+           $("#btn-1").add("#btn-3").add("#btn-4").attr("disabled","disabled"); 
+        });
+        
+            $("#btn-3").click(function(){
+            $(".child-3").nextUntil(".child-6").css({"backgroundColor":"gold"});
+           $("#btn-2").add("#btn-1").add("#btn-4").attr("disabled","disabled"); 
+        });
+        
+            $("#btn-4").click(function(){
+             $(".child-3").siblings().css({"backgroundColor":"gold"});
+           $("#btn-2").add("#btn-3").add("#btn-1").attr("disabled","disabled"); 
+        });
+        
+    });
+    </script>
+</body>
+</html>
