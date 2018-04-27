@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body,
+        html {
+            padding: 0;
+            margin: 0;
+             background-color:beige ;
+            
+        }
+
+        main {
+            height: 400px;
+            position: relative;
+            text-align: center;
+            width: 800px;
+            margin: 100px auto;
+        }
+
+        div {
+            position: absolute;
+            border: 1px solid #000;
+            border-radius: 4px;
+        }
+
+        .Ancestor {
+            left: 200px;
+            height: 400px;
+            width: 400px;
+        }
+
+        .grandparent {
+            left: 25px;
+            top: 25px;
+            width: 350px;
+            height: 350px;
+        }
+
+        .parent {
+            left: 25px;
+            top: 25px;
+            width: 300px;
+            height: 300px;
+        }
+
+        .son {
+            left: 25px;
+            top: 25px;
+            width: 250px;
+            height: 250px;
+            color: #000 !important;
+        }
+        .btn{
+            position: relative;
+            top: 200px;
+            width: 100px;
+            border: 1px solid white;
+            border-radius: 4px;
+            height: 30px;
+            background-color: green;
+            color: white;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="Ancestor">
+            Ancestor
+            <div class="grandparent">
+                Grandparent
+                <div class="parent">
+                   Parent
+                    <div class="son">
+                        Son
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button  class="btn" id="btn-1" type="button">Parent</button>
+        <button  class="btn" id="btn-2" type="button">Parents</button><br>
+        <button  class="btn" id="btn-3" type="button">ParentsUntil</button>
+       
+
+
+
+    </main>
+    <script src="Js/Jquery.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#btn-1").click(function(){
+                $(".son").parent().css({"color":"green"});
+                $("#btn-2").add("#btn-3").attr("disabled","disabled");
+            });
+             $("#btn-2").click(function(){
+                $(".son").parents().css({"color":"green"});
+                 $("#btn-1").add("#btn-3").attr("disabled","disabled");
+            });
+             $("#btn-3").click(function(){
+                $(".son").parentsUntil(".Ancestor").css({"color":"green"});
+                 $("#btn-2").add("#btn-1").attr("disabled","disabled");
+            });
+            
+        });
+    </script>
+</body>
+
+</html>
