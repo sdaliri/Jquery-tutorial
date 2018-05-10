@@ -1,0 +1,26 @@
+{
+  "name": "jquery-tutorial",
+  "version": "1.0.0",
+  "description": "This project is writen for jquery tutorials",
+  "main": "index.js",
+  "scripts": {
+    "start" : "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sdaliri/Jquery-tutorial.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sdaliri/Jquery-tutorial/issues"
+  },
+  "homepage": "https://github.com/sdaliri/Jquery-tutorial#readme",
+  "dependencies": {
+    "@types/body-parser": "^1.17.0",
+    "@types/express": "^4.11.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3"
+  }
+}
