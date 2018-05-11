@@ -46,6 +46,7 @@ router.post("/post/jsonData", function(req, res) {
     }
 });
 
+app.use(router)
 
 var port = 8080;
 
